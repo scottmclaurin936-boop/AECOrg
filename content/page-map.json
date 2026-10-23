@@ -1,0 +1,45 @@
+{
+  "status": "unapproved_offline_review",
+  "date": "2026-10-22",
+  "academy_org": {
+    "home": "org/index.html",
+    "pages": [
+      "org/index.html",
+      "org/about.html",
+      "org/member-001.html",
+      "org/creators.html",
+      "org/projects.html",
+      "org/initiatives.html",
+      "org/project-record.html",
+      "org/membership.html",
+      "org/apply.html",
+      "org/site-map.html"
+    ]
+  },
+  "production_com": {
+    "home": "com/index.html",
+    "pages": [
+      "com/index.html",
+      "com/portfolio.html",
+      "com/production-record.html",
+      "com/workflow.html",
+      "com/production-inquiry.html",
+      "com/site-map.html"
+    ]
+  },
+  "peak_irony": {
+    "integrated": false,
+    "implementation": null,
+    "possible_future_options": [
+      "approved outbound link",
+      "approved HTTP redirect with explicit destination and ownership review"
+    ]
+  },
+  "review_tools": [
+    "review.html",
+    "review-controls.html",
+    "review-desk.html",
+    "asset-audit.html",
+    "project-workbench.html"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "placeholder-example",
+  "surface": "academy_org",
+  "title": "Title pending founder approval",
+  "category": "other",
+  "summary": "Example metadata only. Not a real Academy project.",
+  "visibility": "draft",
+  "approval": {
+    "approved_by": null,
+    "approved_at": null,
+    "rights_verified": false
+  },
+  "assets": [],
+  "credits": []
+}

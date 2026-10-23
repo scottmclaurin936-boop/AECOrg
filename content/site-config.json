@@ -1,0 +1,37 @@
+{
+  "status": "unapproved_offline_review",
+  "edited_for": "review_handoff_only",
+  "academy": {
+    "display_name": "Academy of Emerging Creators",
+    "home_hero_heading": "A place for creators to build what comes next.",
+    "membership": {
+      "mode": "application_review",
+      "applications_open": false,
+      "allow_public_signup": false,
+      "heading": "Membership starts with an application.",
+      "intro": "Applications are reviewed before any invitation or account creation.",
+      "future_modes": [
+        "instant_signup_reserved_disabled"
+      ]
+    }
+  },
+  "production": {
+    "display_name": "AEC Production",
+    "inquiries_open": false,
+    "services_confirmed": false
+  },
+  "peak_irony": {
+    "integrated": false,
+    "routing": "none"
+  },
+  "publication": {
+    "deploy_authorized": false,
+    "approved_assets_only": true
+  },
+  "review": {
+    "device_preview": "local_only",
+    "asset_audit": "advisory_only",
+    "content_editing": "local_draft_metadata_only",
+    "project_record_workbench": "offline_draft_import_export_only"
+  }
+}

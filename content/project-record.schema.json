@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEC proposed project record \u2014 review only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "surface",
+    "title",
+    "category",
+    "visibility",
+    "approval",
+    "assets",
+    "credits"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"
+    },
+    "surface": {
+      "enum": [
+        "academy_org",
+        "production_com"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "enum": [
+        "music",
+        "film",
+        "audio",
+        "design",
+        "publishing",
+        "other"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "visibility": {
+      "enum": [
+        "draft",
+        "review",
+        "approved_public"
+      ]
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved_by",
+        "approved_at",
+        "rights_verified"
+      ],
+      "properties": {
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rights_verified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "credits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

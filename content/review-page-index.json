@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-21",
+  "status": "unapproved_offline_review",
+  "pages": [
+    {
+      "group": "Academy / .org",
+      "path": "org/index.html",
+      "label": "Home",
+      "title": "Academy of Emerging Creators"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/about.html",
+      "label": "About",
+      "title": "About"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/member-001.html",
+      "label": "Member #001",
+      "title": "Member #001"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/creators.html",
+      "label": "Creators",
+      "title": "Creator Directory"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/projects.html",
+      "label": "Projects",
+      "title": "Project Library"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/initiatives.html",
+      "label": "Initiatives",
+      "title": "Initiatives"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/project-record.html",
+      "label": "Project detail",
+      "title": "Academy Project Record"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/membership.html",
+      "label": "Membership",
+      "title": "Membership concept"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/apply.html",
+      "label": "Apply",
+      "title": "Application preview"
+    },
+    {
+      "group": "Academy / .org",
+      "path": "org/site-map.html",
+      "label": "All pages",
+      "title": "All Academy pages"
+    },
+    {
+      "group": "Production / .com",
+      "path": "com/index.html",
+      "label": "Home",
+      "title": "AEC Production"
+    },
+    {
+      "group": "Production / .com",
+      "path": "com/portfolio.html",
+      "label": "Portfolio",
+      "title": "Portfolio"
+    },
+    {
+      "group": "Production / .com",
+      "path": "com/production-record.html",
+      "label": "Production detail",
+      "title": "Project Record"
+    },
+    {
+      "group": "Production / .com",
+      "path": "com/workflow.html",
+      "label": "Workflow",
+      "title": "Production Workflow"
+    },
+    {
+      "group": "Production / .com",
+      "path": "com/production-inquiry.html",
+      "label": "Inquiry preview",
+      "title": "Project inquiry concept"
+    },
+    {
+      "group": "Production / .com",
+      "path": "com/site-map.html",
+      "label": "All pages",
+      "title": "All production pages"
+    }
+  ]
+}

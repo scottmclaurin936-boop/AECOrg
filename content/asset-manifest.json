@@ -1,0 +1,57 @@
+{
+  "version": "0.4.0",
+  "created": "2026-10-19",
+  "publication_state": "unapproved_preview",
+  "surfaces": {
+    "academy_org": {
+      "root": "org/",
+      "intent": "public umbrella",
+      "domain": "UNVERIFIED"
+    },
+    "production_com": {
+      "root": "com/",
+      "intent": "commercial production concept",
+      "domain": "UNVERIFIED"
+    },
+    "peak_irony": {
+      "root": null,
+      "intent": "independent project; no integration authorized",
+      "domain": "UNVERIFIED"
+    }
+  },
+  "assets": [],
+  "approved_public_entries": [],
+  "requirements": {
+    "public_asset": [
+      "id",
+      "filename",
+      "sha256",
+      "source",
+      "rights_holder",
+      "permission_record",
+      "alt_text",
+      "approved_by",
+      "approved_at",
+      "intended_surface"
+    ],
+    "public_entry": [
+      "id",
+      "title",
+      "owner",
+      "summary",
+      "status",
+      "visibility",
+      "approved_by",
+      "approved_at",
+      "credits",
+      "asset_ids"
+    ]
+  },
+  "notes": [
+    "Zero media files are approved by this manifest.",
+    "Placeholders are visual structures, not published projects.",
+    "No DNS or live deployments are changed.",
+    "Creator directory and production record are templates only; no public data imported.",
+    "October 19: proposed project record schema is not an approval or publication system."
+  ]
+}
