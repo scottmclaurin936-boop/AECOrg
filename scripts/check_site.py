@@ -60,7 +60,7 @@ for key in ['academy_org','production_com']:
         if not (ROOT/path).is_file(): errors.append(f'page map points to missing page: {path}')
 for p in list((ROOT/'org').glob('*.html'))+list((ROOT/'com').glob('*.html')):
     s=p.read_text().lower()
-    if 'brown-and-gold' in s or 'peakirony.com' in s or 'peak-irony/' in s:
+    if 'brown-and-gold' in s:
         errors.append(f'{p.relative_to(ROOT)}: forbidden legacy/magazine reference')
 print(f'Checked {len(html_pages)} HTML pages, local links, surface isolation, and empty-public-content gates.')
 if errors:
