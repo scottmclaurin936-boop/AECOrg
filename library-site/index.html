@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en" data-theme="brown"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Private Library — AEC</title><style>
+        /* Theme Palettes */
+        :root[data-theme="brown"] {
+            --bg-deep: #14100e;
+            --bg-card: #221a17;
+            --bg-card-hover: #2b211d;
+            --border-bronze: #523a32;
+            --border-bronze-glow: #a86f55;
+            --text-main: #f5f2f0;
+            --text-muted: #b5a49c;
+            --accent-amber: #d97706;
+            --accent-copper: #c2410c;
+            --nav-bg: rgba(20, 16, 14, 0.95);
+        }
+
+        :root[data-theme="light"] {
+            --bg-deep: #fbf9f7;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f3eee9;
+            --border-bronze: #dcd0c9;
+            --border-bronze-glow: #b5a49c;
+            --text-main: #1c1614;
+            --text-muted: #665c58;
+            --accent-amber: #b45309;
+            --accent-copper: #9a3412;
+            --nav-bg: rgba(251, 249, 247, 0.95);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--border-bronze);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-brand {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-amber);
+        }
+
+        /* Controls Area */
+        .controls-bar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-bronze);
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-bronze-glow);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-amber);
+            color: var(--accent-amber);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-amber);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary.active {
+            background-color: #22c55e;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-amber);
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Cards */
+        .profile-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-bronze);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .profile-card:hover {
+            border-color: var(--border-bronze-glow);
+            background-color: var(--bg-card-hover);
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge-num {
+            background: linear-gradient(135deg, var(--accent-amber), var(--accent-copper));
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+        }
+
+        .badge-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border-bronze);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .profile-bio {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .action-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-bronze-glow);
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .action-button:hover {
+            background-color: var(--accent-amber);
+            border-color: var(--accent-amber);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-bronze);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background-color: var(--bg-card);
+        }
+
+        /* Editing Highlights */
+        .editable-active [contenteditable="true"] {
+            outline: 2px dashed var(--accent-amber);
+            outline-offset: 4px;
+            background-color: rgba(217, 119, 6, 0.05);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+        button, a, textarea { touch-action: manipulation; }
+        :focus-visible { outline: 3px solid var(--accent-amber); outline-offset: 4px; }
+        .nav-links, .control-group, .controls-bar, header { flex-wrap: wrap; }
+        .controls-bar, header { gap: 1rem; }
+        .draft-help { font-size: .85rem; color: var(--text-muted); margin-top: 1rem; }
+        [role="status"] { min-height: 1.6em; color: var(--text-muted); }
+        section { scroll-margin-top: 7rem; }
+        textarea { width: 100%; padding: 1rem; background: var(--bg-deep); color: var(--text-main); border: 1px solid var(--border-bronze-glow); border-radius: 8px; font: inherit; }
+        @media (max-width: 600px) {
+            header, .controls-bar { padding: 1rem; }
+            .nav-links { gap: .8rem; }
+            main { padding: 2rem 1rem; }
+            h1 { font-size: 2rem; }
+            .profile-card { padding: 1.25rem; }
+        }
+        @media (prefers-reduced-motion: reduce) { * { transition: none; } html { scroll-behavior: auto; } }
+</style></head>
+<body><header><a class="nav-brand" href="https://aecorg.vercel.app">AEC Academy</a><span>Private Library</span></header>
+<main><p class="breadcrumb">Founder Workspace</p><h1>Private library & reference vault</h1>
+<p class="subtitle">This workspace requires authorized Vercel sign-in. Your note drafts stay in this browser, not on the server.</p>
+<section class="profile-card"><h2>Workspace draft</h2>
+<label for="privateNotes">Notes, references & manuscript ideas</label>
+<textarea id="privateNotes" rows="14" placeholder="Start a new draft…"></textarea>
+<p class="draft-help">Saved locally on this device only. No cloud uploads or shared archive are configured. Avoid sensitive information on shared devices and export a backup before clearing browser data.</p>
+<p id="noteStatus" role="status" aria-live="polite"></p>
+<div class="control-group"><button class="btn" id="saveNotes" type="button">Save Browser Draft</button><button class="btn" id="exportNotes" type="button">Export Draft</button><button class="btn" id="clearNotes" type="button">Clear Browser Draft</button></div>
+</section><a class="action-button" href="https://aecorg.vercel.app">Back to the public directory</a></main>
+<footer>Academy of Emerging Creators · Private workspace</footer><script src="/library.js" defer></script></body></html>
