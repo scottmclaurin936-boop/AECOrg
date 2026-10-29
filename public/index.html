@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brown">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Directory — Academy of Emerging Creators</title>
+    <style>
+        /* Theme Palettes */
+        :root[data-theme="brown"] {
+            --bg-deep: #14100e;
+            --bg-card: #221a17;
+            --bg-card-hover: #2b211d;
+            --border-bronze: #523a32;
+            --border-bronze-glow: #a86f55;
+            --text-main: #f5f2f0;
+            --text-muted: #b5a49c;
+            --accent-amber: #d97706;
+            --accent-copper: #c2410c;
+            --nav-bg: rgba(20, 16, 14, 0.95);
+        }
+
+        :root[data-theme="light"] {
+            --bg-deep: #fbf9f7;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f3eee9;
+            --border-bronze: #dcd0c9;
+            --border-bronze-glow: #b5a49c;
+            --text-main: #1c1614;
+            --text-muted: #665c58;
+            --accent-amber: #b45309;
+            --accent-copper: #9a3412;
+            --nav-bg: rgba(251, 249, 247, 0.95);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--border-bronze);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-brand {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-amber);
+        }
+
+        /* Controls Area */
+        .controls-bar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-bronze);
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-bronze-glow);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-amber);
+            color: var(--accent-amber);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-amber);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary.active {
+            background-color: #22c55e;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-amber);
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Cards */
+        .profile-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-bronze);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .profile-card:hover {
+            border-color: var(--border-bronze-glow);
+            background-color: var(--bg-card-hover);
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge-num {
+            background: linear-gradient(135deg, var(--accent-amber), var(--accent-copper));
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+        }
+
+        .badge-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border-bronze);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .profile-bio {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .action-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-bronze-glow);
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .action-button:hover {
+            background-color: var(--accent-amber);
+            border-color: var(--accent-amber);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-bronze);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background-color: var(--bg-card);
+        }
+
+        /* Editing Highlights */
+        .editable-active [contenteditable="plaintext-only"] {
+            outline: 2px dashed var(--accent-amber);
+            outline-offset: 4px;
+            background-color: rgba(217, 119, 6, 0.05);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+        button, a, textarea { touch-action: manipulation; }
+        :focus-visible { outline: 3px solid var(--accent-amber); outline-offset: 4px; }
+        .nav-links, .control-group, .controls-bar, header { flex-wrap: wrap; }
+        .controls-bar, header { gap: 1rem; }
+        .draft-help { font-size: .85rem; color: var(--text-muted); margin-top: 1rem; }
+        [role="status"] { min-height: 1.6em; color: var(--text-muted); }
+        section { scroll-margin-top: 7rem; }
+        textarea { width: 100%; padding: 1rem; background: var(--bg-deep); color: var(--text-main); border: 1px solid var(--border-bronze-glow); border-radius: 8px; font: inherit; }
+        @media (max-width: 600px) {
+            header, .controls-bar { padding: 1rem; }
+            .nav-links { gap: .8rem; }
+            main { padding: 2rem 1rem; }
+            h1 { font-size: 2rem; }
+            .profile-card { padding: 1.25rem; }
+        }
+        @media (prefers-reduced-motion: reduce) { * { transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body id="pageBody">
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#home" class="nav-brand">AEC Academy</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#creators" aria-current="page" class="active">Creators</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#membership">Membership</a></li>
+        </ul>
+    </header>
+
+    <!-- Controls: Theme Switcher & Frontend Editor Toggle -->
+    <div class="controls-bar">
+        <div class="control-group">
+            <span>🎨 Theme:</span>
+            <button class="btn" id="themeToggleBtn" type="button" aria-pressed="false">Switch to Light Mode</button>
+        </div>
+        <div class="control-group">
+            <span>⚡ Editor:</span>
+            <button class="btn btn-primary" id="editToggleBtn" type="button" aria-pressed="false">Edit Local Draft</button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main id="home">
+        <div class="breadcrumb" data-editable="true" data-field="field-1">Academy / Creator Directory</div>
+        <h1 data-editable="true" data-field="field-2">Creator directory</h1>
+        <p class="subtitle" data-editable="true" data-field="field-3">Meet the creators building the Academy: original works, shared projects, and a growing creative community.</p>
+
+        <p class="draft-help">Text edits are personal drafts saved only in this browser. They do not change the live site or sync between devices. Export a backup before clearing browser data.</p>
+        <p id="draftStatus" role="status" aria-live="polite"></p>
+        <div class="control-group" style="margin: 1rem 0 2rem">
+            <button class="btn" id="exportDraftBtn" type="button">Export Text Draft</button>
+            <button class="btn" id="resetDraftBtn" type="button">Reset Local Draft</button>
+        </div>
+        <section id="about">
+            <h2>About the Academy</h2>
+            <p data-editable="true" data-field="field-4">The Academy of Emerging Creators supports original narrative works, multimedia publishing, and creator-led collaboration.</p>
+        </section>
+        <!-- Private Library Room Section -->
+        <section>
+            <h2>Private Room & Archive Library</h2>
+            <div class="profile-card">
+                <div class="badge-row">
+                    <span class="badge-num" data-editable="true" data-field="field-5">LIB</span>
+                    <span class="badge-role" data-editable="true" data-field="field-6">Restricted / Founder Workspace</span>
+                </div>
+                <h3 class="profile-name" data-editable="true" data-field="field-7">Private library & reference vault</h3>
+                <p class="profile-bio" data-editable="true" data-field="field-8">A separate workspace protected by Vercel sign-in for authorized team members. Start a private browser draft and export a backup. Cloud document storage is not enabled.</p>
+                <a href="https://aecorg-library.vercel.app" class="action-button">Enter Private Library</a>
+            </div>
+        </section>
+
+        <section id="creators">
+            <h2>Creator Profiles</h2>
+
+            <!-- Founder Profile Card -->
+            <div class="profile-card">
+                <div class="badge-row">
+                    <span class="badge-num" data-editable="true" data-field="field-9">001</span>
+                    <span class="badge-role" data-editable="true" data-field="field-10">Founder profile / draft</span>
+                </div>
+                <h3 class="profile-name" data-editable="true" data-field="field-11">Scott McLaurin</h3>
+                <p class="profile-bio" data-editable="true" data-field="field-12">Founder record and primary architectural profile, showcasing original narrative works, multimedia publishing, and creator governance models.</p>
+                <a href="#founder-profile" class="action-button">View Member #001 Profile</a>
+            </div>
+        </section>
+        <section id="founder-profile" class="profile-card">
+            <h2>Member #001 — Founder Profile</h2>
+            <p data-editable="true" data-field="field-13">Scott McLaurin is the founder of the Academy of Emerging Creators. This profile introduces the Academy's work in original storytelling, publishing, and creator governance.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p data-editable="true" data-field="field-14">The Academy's first projects focus on narrative works, multimedia publishing, and the creator directory. Project listings will be added as they are ready to share.</p>
+        </section>
+        <section id="membership">
+            <h2>Membership</h2>
+            <p data-editable="true" data-field="field-15">Membership registration is not open yet. This directory introduces the founding profile; member applications and account features are not currently available.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p data-editable="true" data-field="field-16">Academy / .org · 2026 Interactive Concept · Classy Brown Edition</p>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script src="/site.js" defer></script>
+</body>
+</html>
