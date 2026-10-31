@@ -6,7 +6,7 @@ Welcome to the official repository for the **Academy of Emerging Creators**. Thi
 The Academy of Emerging Creators is designed to pioneer new standards in organizational history, leadership frameworks, and creator enablement. This repository contains the frontend web prototypes and structure built to establish our digital footprint.
 
 ## 📁 Repository Structure
-- **public/**: The published public website (creator directory homepage).
+- **public/**: The publicly accessible website output (creator directory homepage); never put private content here.
 - **library-site/**: The separately deployed, platform-protected private library workspace.
 - **tests/**: Automated checks for the site.
 
